@@ -30,9 +30,15 @@
 //        System.out.println("==== TradeMax Pro Console ====");
 //        while (true) {
 //            System.out.println();
-//            System.out.println("1.Register  2.Add Money  3.Withdraw  4.View Stocks");
-//            System.out.println("5.Buy       6.Sell       7.View Profile 8.View Portfolio");
-//            System.out.println("9.Exit");
+//            System.out.println("1. Register");
+//            System.out.println("2. Add Money");
+//            System.out.println("3. Withdraw Money");
+//            System.out.println("4. View Stocks");
+//            System.out.println("5. Buy Stock");
+//            System.out.println("6. Sell Stock");
+//            System.out.println("7. View Profile");
+//            System.out.println("8. View Portfolio");
+//            System.out.println("9. Exit");
 //            System.out.print("Choose> ");
 //            String choice = sc.nextLine();
 //            try {
