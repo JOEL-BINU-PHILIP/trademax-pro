@@ -1,5 +1,6 @@
 package com.trademax.service;
 
+import com.trademax.exception.DuplicateFieldException;
 import com.trademax.exception.UserNotFoundException;
 import com.trademax.model.User;
 import com.trademax.model.Wallet;
@@ -24,7 +25,14 @@ public class UserService {
 
         if (u.getPortfolio() == null)
             u.setPortfolio(Collections.emptyList());
+        
+        if (userRepo.findByEmail(u.getEmail()).isPresent()) {
+            throw new DuplicateFieldException("Email already exists");
+        }
 
+        if (userRepo.findByPan(u.getPan()).isPresent()) {
+            throw new DuplicateFieldException("PAN already exists");
+        }
         return userRepo.save(u);
     }
 
@@ -34,4 +42,5 @@ public class UserService {
     }
 
     public User save(User u) { return userRepo.save(u); }
+    
 }
